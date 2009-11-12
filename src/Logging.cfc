@@ -18,11 +18,12 @@
 				, absoluteFolder = ExpandPath(loc.relativeFolder)
 				, relativeFile =  ListAppend(loc.relativeFolder, ListAppend(loc.dateStamp, arguments.extension, "."), "/")
 				, absoluteFile = ExpandPath(loc.relativeFile)
+				, threadId = CreateUUID()
 			};
 		</cfscript>
 			
 		<!--- spin off a new thread so logging isn't holding us up --->
-		<cfthread action="run" name="logging" arguments="#arguments#" loc="#loc#">
+		<cfthread action="run" name="#loc.threadId#" arguments="#arguments#" loc="#loc#">
 		
 			<cfif not DirectoryExists(attributes.loc.absoluteFolder)>
 				<cfdirectory action="create" directory="#attributes.loc.absoluteFolder#" mode="755" />
