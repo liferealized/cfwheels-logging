@@ -1,4 +1,4 @@
-<cfcomponent>
+<cfcomponent output="false">
 
 	<cffunction name="init" output="false" access="public" returntype="any">
 		<cfset this.version = "1.0" />
