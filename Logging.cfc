@@ -1,7 +1,7 @@
 <cfcomponent output="false">
 
   <cffunction name="init" output="false" access="public" returntype="any">
-    <cfset this.version = "1.0,1.4.5" />
+    <cfset this.version = "1.0,1.4.5,2.0" />
     <cfreturn this />
   </cffunction>
 
